@@ -1,29 +1,53 @@
 Shared Dependencies:
 
-1. Exported Variables:
-   - `NODE_HOST` (The host address of the Bitcoin node)
-   - `NODE_PORT` (The port on which the Bitcoin node is running)
-   - `NODE_USER` (The username for RPC access to the Bitcoin node)
-   - `NODE_PASS` (The password for RPC access to the Bitcoin node)
+1. **Dependencies in `package.json`:**
+   - `react` - The core React library.
+   - `react-dom` - The DOM bindings for React.
+   - `express` - If the health check is an API, Express.js might be used for the server.
+   - `dotenv` - To manage environment variables.
 
-2. Data Schemas:
-   - None specified, but likely a schema for Bitcoin block and transaction data if the explorer interfaces with the node's RPC API.
+2. **Environment Variables in `.env.production`:**
+   - `REACT_APP_VERCEL_ENV` - To determine the environment within the React app.
+   - `API_URL` - The URL of the health check API.
 
-3. ID Names of DOM Elements:
-   - Not specified, as `3xpl.php` is a PHP file and might not directly interact with the DOM. If there is a front-end component, potential IDs could be:
-     - `block_info` (for displaying block information)
-     - `transaction_list` (for displaying a list of transactions)
-     - `search_input` (for a search bar to find specific blocks or transactions)
+3. **Exported Variables and Functions in `api/health.js`:**
+   - `handler` - The function that handles the health check API endpoint.
 
-4. Message Names:
-   - Not specified, but potential message names could include:
-     - `NodeConnectionError` (for errors connecting to the Bitcoin node)
-     - `SyncStatusUpdate` (for messages related to the sync status of the node)
+4. **DOM Element IDs in `public/index.html`, `src/App.js`, `src/components/Navbar.js`, `src/components/Footer.js`:**
+   - `root` - The root DOM element where the React app is mounted.
+   - `navbar` - Potentially an ID for the navigation bar component.
+   - `footer` - Potentially an ID for the footer component.
 
-5. Function Names:
-   - `connectToNode` (function to establish a connection to the Bitcoin node)
-   - `getSyncStatus` (function to check the sync status of the node)
-   - `fetchBlockData` (function to fetch data for a specific block)
-   - `fetchTransactionData` (function to fetch data for a specific transaction)
+5. **Function Names in `src/App.js`, `src/index.js`, `src/components/Navbar.js`, `src/components/Footer.js`:**
+   - `App` - The main React component function in `src/App.js`.
+   - `Navbar` - The React component function for the navigation bar in `src/components/Navbar.js`.
+   - `Footer` - The React component function for the footer in `src/components/Footer.js`.
 
-Please note that the actual names of the shared dependencies may vary based on the specific implementation details of the Bitcoin explorer and the node software being used. The names provided here are hypothetical and based on the typical patterns used in such applications.
+6. **CSS Classes in `src/styles/global.css`:**
+   - `.app` - A class that might be used for styling the `App` component.
+   - `.navbar` - A class for styling the `Navbar` component.
+   - `.footer` - A class for styling the `Footer` component.
+
+7. **Configuration in `vercel.json`:**
+   - `builds` - Configuration for how Vercel should build the project.
+   - `routes` - Configuration for routing in Vercel, possibly including the health check endpoint.
+
+8. **Scripts in `package.json`:**
+   - `start` - Script to start the application.
+   - `build` - Script to build the application for production.
+   - `deploy` - Potentially a script to deploy the application to Vercel.
+
+9. **Gitignore Patterns in `.gitignore`:**
+   - `node_modules/` - The folder containing Node.js dependencies.
+   - `.env` - Environment variable files.
+   - `build/` - The build directory created after running the build script.
+
+10. **Message Names:**
+    - `HealthCheckSuccess` - A potential message name for a successful health check.
+    - `HealthCheckFailure` - A potential message name for a failed health check.
+
+11. **Shared Components and Hooks:**
+    - `useEffect` - A React hook that might be used in `src/App.js` for side effects.
+    - `useState` - A React hook for state management in components.
+
+Please note that the actual shared dependencies would depend on the specific implementation details of the codebase, which are not provided here. The above list is based on common practices and assumptions.
