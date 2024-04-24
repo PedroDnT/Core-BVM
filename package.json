@@ -1,0 +1,39 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "description": "A web application with a health check endpoint, ready to be deployed on Vercel.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "express": "^4.17.1",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "react-scripts": "4.0.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "MIT",
+  "private": true
+}
